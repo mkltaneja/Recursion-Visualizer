@@ -10,39 +10,44 @@
 </head>
 
 <body>
-    <div class="code-container">
-        <div class="arguments-input">
-            <label for="args">Enter value of n</label><br />
-            <input id="args" />
+    <div class="container">
+        <div class="code-container">
+            <div class="arguments-input">
+                <label for="args">Enter value of n</label><br />
+                <input id="args" />
+            </div>
+            <select class="code-selector">
+                <option class="code-val">Fibonacci</option>
+                <option class="code-val">Factorial</option>
+                <option class="code-val">Binomial Coefficient</option>
+                <option class="code-val">Coin Change</option>
+            </select>
+            <div class="codeWrapper">
+                <div class="code"></div>
+            </div>
+            <div class="animation-control">
+                <button class="stop">Stop Vizualization</button>
+                <button class="run">Vizualize</button><br />
+
+                <label for="slider">Adjust the Speed of Animation:</label> <br />
+                <input type="range" min="0" max="100" class="slider" />
+            </div>
+
+            <a class="source-code-url" href="https://github.com/mkltaneja/Recursion-Visualizer">Check the Source code</a>
         </div>
-        <select class="code-selector">
-            <option class="code-val">Fibonacci</option>
-            <option class="code-val">Factorial</option>
-            <option class="code-val">Binomial Coefficient</option>
-            <option class="code-val">Coin Change</option>
-        </select>
-        <div class="codeWrapper">
-            <div class="code"></div>
-        </div>
-        <div class="animation-control">
-            <button class="stop">Stop Vizualization</button>
-            <button class="run">Vizualize</button><br />
-
-            <label for="slider">Adjust the Speed of Animation:</label> <br />
-            <input type="range" min="0" max="100" class="slider" />
-        </div>
-    </div>
 
 
-    <div class="viz" style="height: 100%; width: 55%;"></div>
+        <div class="viz" style="height: 100%; width: 55%;"></div>
 
-    <div class="stack-container">
-        <div class="text">Call Stack</div>
-        <div class="callStack">
-            <div class="stack">
+        <div class="stack-container">
+            <div class="text">Call Stack</div>
+            <div class="callStack">
+                <div class="stack">
+                </div>
             </div>
         </div>
     </div>
+    <footer id="footer">Copyright © 2023 Mukul Taneja. All right received.</footer>
 </body>
 <script src="https://d3js.org/d3.v7.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
