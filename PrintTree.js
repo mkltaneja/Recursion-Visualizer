@@ -2,6 +2,7 @@
 
 var canvas = d3.select(".viz")
     .append("svg")
+    .classed("viz-canvas", true)
     .attr("viewBox", [100, 100, SVGwd, SVGht]);
 // .attr("width", SVGwd)
 // .attr("height", SVGht);

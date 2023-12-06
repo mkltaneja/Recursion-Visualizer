@@ -16,12 +16,14 @@
             <input id="args" />
         </div>
         <select class="code-selector">
-            <option>Fibonacci</option>
-            <option>Factorial</option>
-            <option>Binomial Coefficient</option>
-            <option>Coin Change</option>
+            <option class="code-val">Fibonacci</option>
+            <option class="code-val">Factorial</option>
+            <option class="code-val">Binomial Coefficient</option>
+            <option class="code-val">Coin Change</option>
         </select>
-        <div class="code"></div>
+        <div class="codeWrapper">
+            <div class="code"></div>
+        </div>
         <div class="animation-control">
             <button class="stop">Stop Vizualization</button>
             <button class="run">Vizualize</button><br />
@@ -34,9 +36,11 @@
 
     <div class="viz" style="height: 100%; width: 55%;"></div>
 
-    <div class="text">Call Stack</div>
-    <div class="callstack">
-        <div class="stack">
+    <div class="stack-container">
+        <div class="text">Call Stack</div>
+        <div class="callStack">
+            <div class="stack">
+            </div>
         </div>
     </div>
 </body>

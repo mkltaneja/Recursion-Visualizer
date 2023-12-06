@@ -2,12 +2,14 @@
 let body = document.querySelector("body");
 let codeContainer = document.querySelector(".code");
 let codeSelector = document.querySelector(".code-selector");
+// let codeSelectorOption = document.querySelector(".code-selector option");
 
 let selectedCode = codeSelector.value;
 setCode(selectedCode)
 
-$(".code-selector").click(function () {
+$(".code-selector").change(function () {
     selectedCode = this.value;
+    console.log(selectedCode);
     setCode(selectedCode)
 });
 
@@ -43,7 +45,6 @@ function setCode(selectedCode) {
     else
         return fun(n-1, k-1) 
         + fun(n-1, k);
-    }
 }`
     }
     else if(selectedCode == "Coin Change")

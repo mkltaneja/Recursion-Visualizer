@@ -31,7 +31,7 @@ function RecursionException(message) {
 
 selectedCode = codeSelector.value;
 
-$(".code-selector").click(function () {
+$(".code-selector").change(function () {
     selectedCode = codeSelector.value;
     addArgumentBox(selectedCode);
 });
@@ -91,6 +91,9 @@ function addArgumentBox(selectedCode) {
         $(".code-container").prepend(argBox2);
         $(".code-container").prepend(argBox1);
     }
+    setTimeout(function() {
+        inputBox.addClass('show');
+      }, 100);
 
 }
 
@@ -137,30 +140,39 @@ $(".run").click(function () {
                 radius = 45 / maxChildren;
                 strokeWidth = 10 / maxChildren;
 
-                var group = canvas.append("g").attr("transform", "translate(100, 100)");
-                var demoCircle = group.append("circle")
-                    .attr("class", "circle")
-                    .attr("cx", tree[0].cx + 200)
-                    .attr("cy", tree[0].cy)
-                    .attr("r", radius + 6)
-                    .attr("fill", "black")
-                var innerCircle = group.append("circle")
-                    .attr("class", "circle")
-                    .attr("cx", tree[0].cx + 200)
-                    .attr("cy", tree[0].cy)
-                    .attr("r", radius)
-                    .attr("fill", "#2fc702")
+                // var group = canvas.append("g")
+                //     .attr("transform", "translate(100, 100)")
+                //     .classed("memoization-rep-circle", true);
+                // var demoCircle = group.append("circle")
+                //     .classed("outer-circle", true)
+                //     .attr("class", "circle")
+                //     .attr("cx", tree[0].cx + 200)
+                //     .attr("cy", tree[0].cy)
+                //     .attr("r", radius + 6)
+                //     .attr("fill", "black")
+                // var innerCircle = group.append("circle")
+                //     .classed("inner-circle", true)
+                //     .attr("class", "circle")
+                //     .attr("cx", tree[0].cx + 200)
+                //     .attr("cy", tree[0].cy)
+                //     .attr("r", radius)
+                //     .attr("fill", "#2fc702");
 
-                let demotxt = $(`<span class="memo-txt"> => Repeated Node (Memoization Possible)</span>`)
-                demotxt.css({ "position": "absolute", "font-weight": "bold" });
-                demotxt.offset({ left: tree[0].cx + 400, top: tree[0].cy - 20 });
-                $("body").append(demotxt);
+                let memoBox = $(`<div class="memo-box">
+                                    <span class="memo-circle"></span>
+                                    <span class="memo-txt"> => Repeated Node (Memoization Possible)</span>
+                                </div>`);
+                // let memotxt = $(`<span class="memo-txt"> => Repeated Node (Memoization Possible)</span>`)
+                // memotxt.css({ "position": "absolute", "font-weight": "bold" });
+                // memotxt.offset({ left: tree[0].cx, top: tree[0].cy });
+                $("body").append(memoBox);
+                // $("body").append(memotxt);
 
                 await visualize();
 
                 let ansSpan = $(`<span id="ansspan"> Answer = ${ans} </span>`)
-                ansSpan.css({ "position": "absolute", "color": "green", "font-weight": "bold" });
-                ansSpan.offset({ left: tree[0].cx + 80, top: tree[0].cy - 20 });
+                // ansSpan.css({ "position": "absolute", "color": "green", "font-weight": "bold" });
+                // ansSpan.offset({ left: tree[0].cx + 80, top: tree[0].cy - 20 });
                 $("body").append(ansSpan);
 
 
